@@ -191,7 +191,21 @@
 /// @subsubsection Dynamic memory management
 /// ---------------------------------------------------------------------------
 
+/// <memory_resource>
+#if defined(__has_include)
+#if __has_include(<memory_resource>)
+
 #include <memory_resource> // Polymorphic allocators and memory resources
+
+#endif // __has_include(<memory_resource>)
+
+#if __has_include(<experimental/memory_resource>)
+
+#include <experimental/memory_resource> // Polymorphic allocators and memory resources
+
+#endif // __has_include(<memory_resource>)
+
+#endif // defined (__has_include)
 
 /// ===========================================================================
 /// @subsection Strings library
