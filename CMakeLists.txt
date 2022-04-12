@@ -8,8 +8,11 @@ if(USE_STANDARD_LIBRARY_PCH)
   target_compile_features(StandardLibraryPCH INTERFACE cxx_std_20)
   set(StandardLibraryPCH_INCLUDE_DIR
       ${CMAKE_CURRENT_LIST_DIR}
-      PARENT_SCOPE)
+      PARENT_SCOPE
+  )
   if(MSVC)
     target_compile_options(StandardLibraryPCH INTERFACE "/Zc:__cplusplus")
+    else()
+    target_compile_options(StandardLibraryPCH INTERFACE "-fcoroutines")
   endif()
 endif()
