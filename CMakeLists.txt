@@ -10,13 +10,15 @@ if(USE_STANDARD_LIBRARY_PCH)
       ${CMAKE_CURRENT_LIST_DIR}
       PARENT_SCOPE
   )
+
   if(MSVC)
     target_compile_options(StandardLibraryPCH INTERFACE "/Zc:__cplusplus")
   else()
-    if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-      target_compile_options(StandardLibraryPCH INTERFACE "-stdlib=libstdc++")
-    else()
+    cmake_host_system_information(RESULT OS_NAME_RESULT QUERY OS_NAME)
+    if(OS_NAME_RESULT STREQUAL "Ubuntu")
       target_compile_options(StandardLibraryPCH INTERFACE "-fcoroutines")
+    elseif(OS_NAME_RESULT STREQUAL "Darwin")
+      target_compile_options(StandardLibraryPCH INTERFACE "-stdlib=libstdc++")
     endif()
   endif()
 endif()
