@@ -221,13 +221,28 @@
 /// ===========================================================================
 /// @subsection Concepts library
 /// ===========================================================================
+
+/// <concepts>
+#if defined(__has_include)
+#if __has_include(<concepts>)
+
 #include <concepts> // Fundamental library concepts
+
+#endif // __has_include(<concepts>)
+#endif // defined (__has_include)
 
 /// ===========================================================================
 /// @subsection Coroutines library
 /// ===========================================================================
 
+/// <coroutine>
+#if defined(__has_include)
+#if __has_include(<coroutine>)
+
 #include <coroutine> // Coroutine support library
+
+#endif // __has_include(<coroutine>)
+#endif // defined (__has_include)
 
 /// ===========================================================================
 /// @subsection Utilities library
@@ -253,9 +268,11 @@
 /// <format>
 #if defined(__has_include)
 #if __has_include(<format>)
+
 #include <format> // Formatting library including std::format
-#endif            // __has_include(<format>)
-#endif            // defined (__has_include)
+
+#endif // __has_include(<format>)
+#endif // defined (__has_include)
 
 /// ===========================================================================
 /// @subsection Containers library
@@ -283,23 +300,29 @@
 /// <barrier>
 #if defined(__has_include)
 #if __has_include(<barrier>)
+
 #include <barrier> // Barriers
-#endif             // __has_include(<barrier>)
-#endif             // defined (__has_include)
+
+#endif // __has_include(<barrier>)
+#endif // defined (__has_include)
 
 /// <latch>
 #if defined(__has_include)
 #if __has_include(<latch>)
+
 #include <latch> // Latches
-#endif           // __has_include(<latch>)
-#endif           // defined (__has_include)
+
+#endif // __has_include(<latch>)
+#endif // defined (__has_include)
 
 /// <semaphore>
 #if defined(__has_include)
 #if __has_include(<semaphore>)
+
 #include <semaphore> // Semaphores
-#endif               // __has_include(<semaphore>)
-#endif               // defined (__has_include)
+
+#endif // __has_include(<semaphore>)
+#endif // defined (__has_include)
 
 #include <stop_token> // Stop tokens for std::jthread
 
