@@ -5,7 +5,7 @@ if(USE_STANDARD_LIBRARY_PCH)
   message("[CORE][INFO] Including StandardLibraryPCH OBJECT library")
   add_library(StandardLibraryPCH OBJECT)
   target_sources(StandardLibraryPCH PRIVATE "StandardLibrary.cpp")
-  target_compile_features(StandardLibraryPCH INTERFACE cxx_std_20)
+  target_compile_features(StandardLibraryPCH INTERFACE cxx_std_23)
   set(StandardLibraryPCH_INCLUDE_DIR
       ${CMAKE_CURRENT_LIST_DIR}
       PARENT_SCOPE
