@@ -15,23 +15,23 @@
 #include <typeinfo>   // Runtime type information utilities
 #include <utility>    // Various utility components
 
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /// @subsubsection Dynamic memory management
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 #include <memory> // High-level memory management utilities
 #include <new>    // Low-level memory management utilities
 
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /// @subsubsection Numeric limits
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 #include <climits> // Limits of integral types
 #include <limits>  // Uniform way to query properties of arithmetic types
 
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /// @subsubsection Error handling
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 #include <cassert> // Conditionally compiled macro that compares its argument to zero
 #include <cerrno>    // Macro containing the last error number
@@ -112,15 +112,15 @@
 #include <tuple>            // std::tuple class template
 #include <type_traits>      // Compile-time type information
 
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /// @subsubsection Numeric limits
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 #include <cstdint> // Fixed-width integer types and limits of other types
 
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /// @subsubsection Error handling
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 #include <system_error> // Defines std::error_code, a platform-dependent error code
 
@@ -187,10 +187,11 @@
 #include <optional> // std::optional class template
 #include <variant>  // std::variant class template
 
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /// @subsubsection Dynamic memory management
-/// ---------------------------------------------------------------------------
+/// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+/// ---------------------------------------------------------------------------
 /// <memory_resource>
 #if defined(__has_include)
 #if __has_include(<memory_resource>)
@@ -203,9 +204,10 @@
 
 #include <experimental/memory_resource> // Polymorphic allocators and memory resources
 
-#endif // __has_include(<memory_resource>)
+#endif // __has_include(<experimental/memory_resource>)
 
 #endif // defined (__has_include)
+/// ---------------------------------------------------------------------------
 
 /// ===========================================================================
 /// @subsection Strings library
@@ -236,6 +238,7 @@
 /// @subsection Concepts library
 /// ===========================================================================
 
+/// ---------------------------------------------------------------------------
 /// <concepts>
 #if defined(__has_include)
 #if __has_include(<concepts>)
@@ -244,11 +247,13 @@
 
 #endif // __has_include(<concepts>)
 #endif // defined (__has_include)
+/// ---------------------------------------------------------------------------
 
 /// ===========================================================================
 /// @subsection Coroutines library
 /// ===========================================================================
 
+/// ---------------------------------------------------------------------------
 /// <coroutine>
 #if defined(__has_include)
 #if __has_include(<coroutine>)
@@ -257,6 +262,7 @@
 
 #endif // __has_include(<coroutine>)
 #endif // defined (__has_include)
+/// ---------------------------------------------------------------------------
 
 /// ===========================================================================
 /// @subsection Utilities library
@@ -264,6 +270,7 @@
 
 #include <compare> // Three-way comparison operator support
 
+/// ---------------------------------------------------------------------------
 /// <source_location>
 #if defined(__has_include)
 #if __has_include(<source_location>)
@@ -272,6 +279,7 @@
 
 #endif // __has_include(<source_location>)
 #endif // defined (__has_include)
+/// ---------------------------------------------------------------------------
 
 #include <version> // Supplies implementation-dependent library information
 
@@ -279,6 +287,7 @@
 /// @subsection Strings library
 /// ===========================================================================
 
+/// ---------------------------------------------------------------------------
 /// <format>
 #if defined(__has_include)
 #if __has_include(<format>)
@@ -287,6 +296,7 @@
 
 #endif // __has_include(<format>)
 #endif // defined (__has_include)
+/// ---------------------------------------------------------------------------
 
 /// ===========================================================================
 /// @subsection Containers library
@@ -311,6 +321,7 @@
 /// @subsection Thread support library
 /// ===========================================================================
 
+/// ---------------------------------------------------------------------------
 /// <barrier>
 #if defined(__has_include)
 #if __has_include(<barrier>)
@@ -319,7 +330,9 @@
 
 #endif // __has_include(<barrier>)
 #endif // defined (__has_include)
+/// ---------------------------------------------------------------------------
 
+/// ---------------------------------------------------------------------------
 /// <latch>
 #if defined(__has_include)
 #if __has_include(<latch>)
@@ -328,7 +341,9 @@
 
 #endif // __has_include(<latch>)
 #endif // defined (__has_include)
+/// ---------------------------------------------------------------------------
 
+/// ---------------------------------------------------------------------------
 /// <semaphore>
 #if defined(__has_include)
 #if __has_include(<semaphore>)
@@ -337,8 +352,25 @@
 
 #endif // __has_include(<semaphore>)
 #endif // defined (__has_include)
+/// ---------------------------------------------------------------------------
+
+/// ---------------------------------------------------------------------------
+/// <stop_token>
+#if defined(__has_include)
+#if __has_include(<stop_token>)
 
 #include <stop_token> // Stop tokens for std::jthread
+
+#endif // __has_include(<stop_token>)
+
+#if __has_include(<experimental/stop_token>)
+
+#include <experimental/stop_token> // Stop tokens for std::jthread
+
+#endif // __has_include(<experimental/stop_token>)
+
+#endif // defined (__has_include)
+/// ---------------------------------------------------------------------------
 
 #endif // __cplusplus >= 201103L || _MSVC_LANG >= 201103L
 #endif // __cplusplus >= 201402L || _MSVC_LANG >= 201402L
